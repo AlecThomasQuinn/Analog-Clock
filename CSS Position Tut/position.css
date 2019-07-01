@@ -1,0 +1,114 @@
+.parent{
+    padding: 5px;
+    background-color: dodgerblue;
+    margin-bottom: 5px;
+}
+
+.child{
+    padding: 5px;
+    margin: 2px 0 0 0;
+}
+
+.one{
+    background-color: limegreen;
+}
+
+.two{
+    background-color: salmon;
+}
+
+.three{
+    background-color: orchid;
+}
+
+/* 
+
+R e l a t i v e P o s i t i o n 
+
+takes the element out of the flow of the document
+which allows for exacting control over where the element is placed, however
+I find this difficult to use when using relative units like rems and relying
+on every element's relationship with eachother to keep each element properly 
+in place while still being responsive.
+
+However I still do not know why the space that .one.relative SHOULD be occupying 
+is still being taken up by the parent. If that child is taken out of the document 
+flow how come child 2 and child 3 are not moving up and acting as if there is no 
+child 1?
+
+^ ^ ^ 
+It's because the relative positioning allows you to change the position of the 
+element RELATIVE TO where it would normally appear in the document.. It's 
+as if it is "ghosted" in place and then moved about based on the ghost's position.
+
+*/
+
+.one.relative{
+    position: relative;
+    left: 10px;
+    top: 10px;
+    /* allows for top, right, bottom, left positioning. */
+}
+
+
+/* Absolute Position 
+
+I answered my own question. Absolute Position reomoves the element from the document
+flow AND renders the code as if the element where not on the page at all.
+I.E there is no "ghost," whereas a relatively positioned element is placed in
+relation to it's 'ghost.'
+
+Additionally an absolutely-placed element is placed in relation to a parent element. 
+If it's ACTUAL parent element is "position: static" ("static" is the default and thus rarely
+declared this way) it it will travel through it's hereditary tree looking for 
+any parent that is positioned either 'relative' 'absolute' or 'sticky' and position
+itself according to that. If there is no parent that is not static, it it will
+position itself based on the docuemtn itself (usually appearing
+at the top of the page)
+
+The most common use-case is to make the child positioned absolutely relative to the
+parent, by making the parent "position: relative" but adding no additional positioning
+(top, right, bottom or left)
+*/
+
+
+.parent.absolute{
+    position: relative;
+}
+
+.one.absolute{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* Position Fixed 
+
+Positions itself based on the entire HTML page itself, not on any parent like 
+absolute does. It also fixes itself not just to the document, but the the SCREEN
+that is vewing the document. So if it is top: 10px and right 10px, it will 
+appear everywhere on the document as 10px from the top and 10px from the right of 
+the screen, no matter where in the document you have scrolled.*/
+
+.one.fixed{
+    position: fixed;
+    top: 50px;
+    right: 100px;
+}
+
+/* Position Sticky
+
+A mixture of both Relative and Sticky positions. The element will remain in it's
+relative position until it meets it's absolute position's values (top, right,
+bottom, left) at which point it will 'stick' and behave like a fixed element.
+
+*/
+
+.parent.sticky{
+    height: 200vh;
+}
+
+.one.sticky{
+    position: sticky;
+    top: 10px;
+}
