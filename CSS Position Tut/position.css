@@ -1,24 +1,13 @@
 .parent{
     padding: 5px;
-    background-color: dodgerblue;
+    background-color: silver;
     margin-bottom: 5px;
 }
 
 .child{
     padding: 5px;
     margin: 2px 0 0 0;
-}
-
-.one{
-    background-color: limegreen;
-}
-
-.two{
-    background-color: salmon;
-}
-
-.three{
-    background-color: orchid;
+    background-color: aliceblue;
 }
 
 /* 
@@ -43,14 +32,21 @@ as if it is "ghosted" in place and then moved about based on the ghost's positio
 
 */
 
-.one.relative{
-    position: relative;
-    left: 10px;
-    top: 10px;
+.parent.relative{
+    background-color:forestgreen;
+}
+
+.child.relative{
+    background-color: limegreen;
+    border: 1px solid forestgreen;
     /* allows for top, right, bottom, left positioning. */
 }
 
-
+.child.one.relative{
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
 /* Absolute Position 
 
 I answered my own question. Absolute Position reomoves the element from the document
@@ -74,11 +70,16 @@ parent, by making the parent "position: relative" but adding no additional posit
 
 .parent.absolute{
     position: relative;
+    background-color: darkcyan;
 }
 
-.one.absolute{
+.child.absolute{
+    background-color:cyan;
+    border: 1px solid darkcyan;
+}
+.child.one.absolute{
     position: absolute;
-    left: 10px;
+    left: 200px;
     top: 10px;
 }
 
@@ -90,12 +91,21 @@ that is vewing the document. So if it is top: 10px and right 10px, it will
 appear everywhere on the document as 10px from the top and 10px from the right of 
 the screen, no matter where in the document you have scrolled.*/
 
-.one.fixed{
+.parent.fixed{
+    background-color: steelblue;
+}
+
+.child.fixed{
+    background-color: dodgerblue;
+    border: 1px solid steelblue;
+}
+
+
+.child.one.fixed{
     position: fixed;
     top: 50px;
     right: 100px;
 }
-
 /* Position Sticky
 
 A mixture of both Relative and Sticky positions. The element will remain in it's
@@ -106,9 +116,15 @@ bottom, left) at which point it will 'stick' and behave like a fixed element.
 
 .parent.sticky{
     height: 200vh;
+    background-color: rebeccapurple;
 }
 
-.one.sticky{
+.child.sticky{
+    background-color: darkviolet;
+    border: 1px solid  rebeccapurple;
+}
+
+.child.sticky{
     position: sticky;
     top: 10px;
 }
