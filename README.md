@@ -10,8 +10,7 @@ from https://www.youtube.com/watch?v=Ki0XXrlKlHY&amp;t=59s
 
 * * *
 
-I ended up firstly doing a CSS Position tutorial since in the description of the 
-clock tutorial he mentions "we will be covering CSS position, and transform extensively"
+I ended up firstly doing a CSS Position tutorial to solidify understanding of position since in the description of the clock tutorial he mentions "we will be covering CSS position, and transform extensively"
 
 https://www.youtube.com/watch?v=jx5jmI0UlXU
 
@@ -19,5 +18,8 @@ I pushed this to github and now I am going follow along with this next tutorial 
 
 https://www.youtube.com/watch?v=NzjU1GmKosQ
 
+7-2-2019
 
+Changed the colors and modified to make more sense as a 1 page website as opposed to a codepen or video tutorial.
 
+7-3-2019
